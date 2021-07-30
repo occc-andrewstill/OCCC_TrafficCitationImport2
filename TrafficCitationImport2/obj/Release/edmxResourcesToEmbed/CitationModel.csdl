@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReferenceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ReferenceEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="ACID_Reference" />
+    <FunctionImport Name="Application_Add">
+      <Parameter Name="applicationID" Mode="In" Type="Int32" />
+      <Parameter Name="applicationName" Mode="In" Type="String" />
+      <Parameter Name="applicationType" Mode="In" Type="String" />
+      <Parameter Name="schedule" Mode="In" Type="String" />
+      <Parameter Name="createdBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ApplicationHealth_GetLatest" ReturnType="Collection(ReferenceModel.ApplicationHealth_GetLatest_Result)" />
+    <FunctionImport Name="Citation_LoadTestData" />
+    <FunctionImport Name="Citation_ProcessRules">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Citation_ValidateCitationNumberPresent">
+      <Parameter Name="fileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Citation_ValidateDriverLicenseState">
+      <Parameter Name="fileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CitationImport2_GetLastFileLogId" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="CitationImport2_GetVendorList" ReturnType="Collection(ReferenceModel.CitationImport2_GetVendorList_Result)" />
+    <FunctionImport Name="DataForDemo_Process">
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DLCustomer_Insert" ReturnType="Collection(Guid)">
+      <Parameter Name="batchGuid" Mode="In" Type="Guid" />
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="middleName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="nameSuffix" Mode="In" Type="String" />
+      <Parameter Name="raceCode" Mode="In" Type="String" />
+      <Parameter Name="genderCode" Mode="In" Type="String" />
+      <Parameter Name="dateOfBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="isDeceased" Mode="In" Type="Boolean" />
+      <Parameter Name="sharePersonalInfo" Mode="In" Type="Boolean" />
+      <Parameter Name="heightInCm" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DLVendoeResponse_Insert" ReturnType="Collection(String)">
+      <Parameter Name="requestId" Mode="In" Type="Int32" />
+      <Parameter Name="requestDate" Mode="In" Type="DateTime" />
+      <Parameter Name="weekEndingDate" Mode="In" Type="DateTime" />
+      <Parameter Name="resultCount" Mode="In" Type="Int32" />
+      <Parameter Name="mixTransactionId" Mode="In" Type="Int32" />
+      <Parameter Name="timesRequested" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DynamicEmail_EmailToSend_Get" ReturnType="Collection(Int32)">
+      <Parameter Name="caseType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DynamicEmail_MetaData_ABCD_Get">
+      <Parameter Name="recordId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DynamicEmail_MetaData_BCDE_Get">
+      <Parameter Name="recordId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DynamicEmail_MetaData_Get">
+      <Parameter Name="caseType" Mode="In" Type="String" />
+      <Parameter Name="recordId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DynamicEmail_Template_Get" ReturnType="Collection(ReferenceModel.DynamicEmail_Template_Get_Result)">
+      <Parameter Name="caseType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertLog">
+      <Parameter Name="application" Mode="In" Type="String" />
+      <Parameter Name="level" Mode="In" Type="String" />
+      <Parameter Name="callSite" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="message" Mode="In" Type="String" />
+      <Parameter Name="stackTrace" Mode="In" Type="String" />
+      <Parameter Name="innerException" Mode="In" Type="String" />
+      <Parameter Name="additionalInfo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertLog_WebApi">
+      <Parameter Name="application" Mode="In" Type="String" />
+      <Parameter Name="level" Mode="In" Type="String" />
+      <Parameter Name="callSite" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="message" Mode="In" Type="String" />
+      <Parameter Name="stackTrace" Mode="In" Type="String" />
+      <Parameter Name="innerException" Mode="In" Type="String" />
+      <Parameter Name="additionalInfo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ApplicationHealth_Update">
+      <Parameter Name="applicationID" Mode="In" Type="Int32" />
+      <Parameter Name="applicationState" Mode="In" Type="String" />
+      <Parameter Name="healthStatus" Mode="In" Type="Boolean" />
+      <Parameter Name="comment" Mode="In" Type="String" />
+      <Parameter Name="createdBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Tags_TestAdd" ReturnType="Collection(ReferenceModel.sp_Tags_TestAdd_Result)" />
+    <FunctionImport Name="sp_Tags_TestDelete" ReturnType="Collection(ReferenceModel.sp_Tags_TestDelete_Result)" />
+    <FunctionImport Name="sp_Tags_TestUpdate" ReturnType="Collection(ReferenceModel.sp_Tags_TestUpdate_Result)" />
+    <FunctionImport Name="sp_TagsBasicAdd">
+      <Parameter Name="Id" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TagsBasicDelete">
+      <Parameter Name="TagId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TagsBasicUpdate">
+      <Parameter Name="TagId" Mode="In" Type="String" />
+      <Parameter Name="TagName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TagsExpandedAdd">
+      <Parameter Name="TagId" Mode="In" Type="String" />
+      <Parameter Name="TagName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TagsExpandedDelete">
+      <Parameter Name="TagId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TagsExpandedUpdate">
+      <Parameter Name="TagId" Mode="In" Type="String" />
+      <Parameter Name="TagName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TalentManagement_LoadEmployee" />
+    <FunctionImport Name="TalentManagement_LoadEmployeeHistory" />
+    <FunctionImport Name="TalentManagement_LoadEmployeeStage" />
+    <FunctionImport Name="TalentManagment_BatchUpdate" />
+    <FunctionImport Name="TEST_DataForDemo_Test1" />
+    <FunctionImport Name="TrafficCitationImport_CitationAlreadyExistInOdyssey">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_FutureBirthDate">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_GetTrooperUnit">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_LinkTrooperUnitToFHP">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_LookupAgencyName">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingBirthDate">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingCitationNumber">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingDriverLicense">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingFirstName">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingGender">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingLastName">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingOffesnseDate">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_MissingOrInvalidRace">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_OldOffesnseDate">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_PopulateFHPTrooperUnitOdy">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_PopulateOfficerIDOdy">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_RuleMaster">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_SetFHPAgencyCode">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_ValidateBirthDate">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_ValidateDLState">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_ValidateFHPTroopers">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TrafficCitation_AgencyVendorInfo" EntityType="ReferenceModel.TrafficCitation_AgencyVendorInfo" />
+    <EntitySet Name="TrafficCitation_ImportFileLog" EntityType="ReferenceModel.TrafficCitation_ImportFileLog" />
+    <EntitySet Name="TrafficCitation_Import" EntityType="ReferenceModel.TrafficCitation_Import" />
+    <FunctionImport Name="TrafficCitationImport_ImportCitationsToOdyssey">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+      <Parameter Name="VendorAgencyId" Mode="In" Type="Int32" />
+      <Parameter Name="LocalPath" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_SendFailedToQueue">
+      <Parameter Name="QueFileLogId" Mode="In" Type="Int32" />
+      <Parameter Name="CurrExceptionFlag" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_ProcessCitations">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+      <Parameter Name="CitationNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_QueueCitationsFixedManually">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_UpdateJurisdiction" />
+    <FunctionImport Name="TrafficCitationImport_MarkFileCompletion">
+      <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TrafficCitationImport_ProcessFailedCitations">
+      <Parameter Name="CitationNumber" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="ApplicationHealth_GetLatest_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ApplicationID" Nullable="false" />
+    <Property Type="String" Name="ApplicationState" Nullable="false" MaxLength="20" />
+    <Property Type="Boolean" Name="HealthStatus" Nullable="false" />
+    <Property Type="String" Name="Comment" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="Created" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="CitationImport2_GetVendorList_Result">
+    <Property Type="Int32" Name="VendorAgencyId" Nullable="false" />
+    <Property Type="String" Name="CitationType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ConnectionType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ServerName" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="ServerUserName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ServerPassword" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="ServerPort" Nullable="true" />
+    <Property Type="String" Name="LocalPath" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="RemotePath" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="DynamicEmail_Template_Get_Result">
+    <Property Type="String" Name="ToEmail" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="FromEmail" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SubjectTemplate" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="BodyTemplate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Tags_TestAdd_Result">
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Column2" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Column3" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_Tags_TestDelete_Result">
+    <Property Type="String" Name="TagId" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TagName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_Tags_TestUpdate_Result">
+    <Property Type="String" Name="TagId" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TagName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <EntityType Name="TrafficCitation_AgencyVendorInfo">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorAgencyId" Type="Int32" Nullable="false" />
+    <Property Name="CitationType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VendorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AgencyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ConnectionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServerName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ServerUserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ServerPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServerPort" Type="Int32" />
+    <Property Name="LocalPath" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RemotePath" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SSHKey" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="BCPFormatFile" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NodeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SLA" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TrafficCitation_ImportFileLog">
+    <Key>
+      <PropertyRef Name="FileLogId" />
+    </Key>
+    <Property Name="FileLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RecordCount" Type="Int32" />
+    <Property Name="ProcessStartTime" Type="DateTime" Precision="3" />
+    <Property Name="ProcessEndTime" Type="DateTime" Precision="3" />
+    <Property Name="ProcessStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="VendorAgencyId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TrafficCitation_Import">
+    <Key>
+      <PropertyRef Name="CitationNumber" />
+    </Key>
+    <Property Name="UpdateType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CitationNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CheckDigit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JurisdictionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssueAgencyType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssueAgencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssueAgencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DayofWeek" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OffenseDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OffenseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OffenseTimeAMPM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DriverFirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DriverMiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DriverLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DriverSuffix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddressDiffLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StateofDriversAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DriverLicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DriverLicenseState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DriverLicenseClass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationExpiredDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CommercialVehicleCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleYear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleMake" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehiclyColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HazardousMaterials" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleTagNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleTrailerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleTagExpYear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanionCitation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DistanceFeet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DistanceMiles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DirectionN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DirectionS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DirectionE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DirectionW" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfNode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActualSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PostedSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Hwy4Lane" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HwyInterstate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationCareless" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationDevice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationRow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationLane" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationPassing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationChildRestraint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationDUI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BloodAlcoholLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationSeatBelt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationEquipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationTagLess" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationTagMore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationInsurance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationExpiredDriverLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationExpiredDLMore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationNoDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationSuspendedDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherComments" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FLDLEditOverride" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StateStatuteIndicator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubSection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Crash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyDamageAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Injury" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SeriousInjury" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FatalInjury" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MethodOfArrest" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CriminalCourtReq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InfractionCourtReq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InfractionNoCourtReq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourtDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourtTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourtName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourtTimeAMPM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourtAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CourtCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourtState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourtZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArrestDeliveredTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArrestDeliveredDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerRank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerBadgeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TrooperUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bal08Above" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DUIRefuse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DUILicenseSurrendered" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DUILicenseRSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DuiEligible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DUIEligibleRSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DUIBarOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AggressiveDriverFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CriminalIndicator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Filler" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssueArrestDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerDeliveryVerification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Motorcycle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PassengerVehicle16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerReExamFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DUIViolationUnder18" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ECitationIndicator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NameChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CommercialDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GPSLat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GPSLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationSignalRedLight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationWorkersPresent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationHandHeld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolationSchoolZone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgencyIdentifier" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PermanentRegistration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SpeedMeasuringDeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ComplianceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DLSeize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Business" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FileLogId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExceptionReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ExceptionFlag" Type="Int32" />
+    <Property Name="CaseId" Type="Int32" />
+    <Property Name="CaseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RunDate" Type="DateTime" Precision="0" />
+    <Property Name="CaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Statute" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Jurisdiction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="JurisdictionNumberOdy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentID" Type="Int32" />
+    <Property Name="DocumentVersionId" Type="Int32" />
+    <Property Name="IssueAgencyNameOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerPartyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleMakeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleColorCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CommercialVehicleCodeOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HazardousMaterialsOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AggressiveDriverFlagOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InjuryOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SeriousInjuryOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FatalInjuryOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCodeOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JurisdictionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HeightFeet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HeightInches" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatuteCodeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CriminalCourtReqOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficerIDOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CourtMandatory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TrooperUnitOdy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EventID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CriminalCase" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VendorAgencyId" Type="Int32" />
+    <Property Name="WorkFlowItemId" Type="Int32" />
+    <Property Name="RaceOdy" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LastApiAttempt" Type="DateTime" Precision="3" />
+    <Property Name="Processed" Type="Boolean" />
+    <Property Name="ViolationExpiredDLOdy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NotifySA" Type="Boolean" />
+    <Property Name="QueueStatus" Type="Int32" />
+    <Property Name="ApiStatus" Type="Boolean" />
+    <Property Name="Has_Image" Type="Boolean" />
+  </EntityType>
+</Schema>

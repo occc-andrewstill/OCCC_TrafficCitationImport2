@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReferenceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TrafficCitation_AgencyVendorInfo">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorAgencyId" Type="int" Nullable="false" />
+    <Property Name="CitationType" Type="varchar" MaxLength="50" />
+    <Property Name="VendorName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AgencyName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ConnectionType" Type="varchar" MaxLength="50" />
+    <Property Name="ServerName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ServerUserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ServerPassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServerPort" Type="int" />
+    <Property Name="LocalPath" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="RemotePath" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SSHKey" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="BCPFormatFile" Type="varchar" MaxLength="500" />
+    <Property Name="NodeID" Type="varchar" MaxLength="50" />
+    <Property Name="AgencyCode" Type="varchar" MaxLength="50" />
+    <Property Name="SLA" Type="int" />
+  </EntityType>
+  <EntityType Name="TrafficCitation_Import">
+    <Key>
+      <PropertyRef Name="CitationNumber" />
+    </Key>
+    <Property Name="UpdateType" Type="varchar" MaxLength="50" />
+    <Property Name="CitationNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CheckDigit" Type="varchar" MaxLength="50" />
+    <Property Name="CountyNumber" Type="varchar" MaxLength="50" />
+    <Property Name="JurisdictionNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CityName" Type="varchar" MaxLength="50" />
+    <Property Name="IssueAgencyType" Type="varchar" MaxLength="50" />
+    <Property Name="IssueAgencyCode" Type="varchar" MaxLength="50" />
+    <Property Name="IssueAgencyName" Type="varchar" MaxLength="50" />
+    <Property Name="DayofWeek" Type="varchar" MaxLength="100" />
+    <Property Name="OffenseDate" Type="varchar" MaxLength="50" />
+    <Property Name="OffenseTime" Type="varchar" MaxLength="50" />
+    <Property Name="OffenseTimeAMPM" Type="varchar" MaxLength="50" />
+    <Property Name="DriverFirstName" Type="varchar" MaxLength="100" />
+    <Property Name="DriverMiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="DriverLastName" Type="varchar" MaxLength="100" />
+    <Property Name="DriverSuffix" Type="varchar" MaxLength="50" />
+    <Property Name="StreetAddress" Type="varchar" MaxLength="50" />
+    <Property Name="AddressDiffLicense" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="StateofDriversAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="varchar" MaxLength="50" />
+    <Property Name="Race" Type="varchar" MaxLength="50" />
+    <Property Name="Sex" Type="varchar" MaxLength="50" />
+    <Property Name="Height" Type="varchar" MaxLength="50" />
+    <Property Name="DriverLicenseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="DriverLicenseState" Type="varchar" MaxLength="50" />
+    <Property Name="DriverLicenseClass" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationExpiredDL" Type="varchar" MaxLength="50" />
+    <Property Name="CommercialVehicleCode" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleYear" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleMake" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleStyle" Type="varchar" MaxLength="50" />
+    <Property Name="VehiclyColor" Type="varchar" MaxLength="50" />
+    <Property Name="HazardousMaterials" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleTagNumber" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleTrailerNumber" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleState" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleTagExpYear" Type="varchar" MaxLength="50" />
+    <Property Name="CompanionCitation" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationLocation" Type="varchar" MaxLength="50" />
+    <Property Name="DistanceFeet" Type="varchar" MaxLength="50" />
+    <Property Name="DistanceMiles" Type="varchar" MaxLength="50" />
+    <Property Name="DirectionN" Type="varchar" MaxLength="50" />
+    <Property Name="DirectionS" Type="varchar" MaxLength="50" />
+    <Property Name="DirectionE" Type="varchar" MaxLength="50" />
+    <Property Name="DirectionW" Type="varchar" MaxLength="50" />
+    <Property Name="OfNode" Type="varchar" MaxLength="50" />
+    <Property Name="ActualSpeed" Type="varchar" MaxLength="50" />
+    <Property Name="PostedSpeed" Type="varchar" MaxLength="50" />
+    <Property Name="Hwy4Lane" Type="varchar" MaxLength="50" />
+    <Property Name="HwyInterstate" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationCareless" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationDevice" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationRow" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationLane" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationPassing" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationChildRestraint" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationDUI" Type="varchar" MaxLength="50" />
+    <Property Name="BloodAlcoholLevel" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationSeatBelt" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationEquipment" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationTagLess" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationTagMore" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationInsurance" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationExpiredDriverLicense" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationExpiredDLMore" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationNoDL" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationSuspendedDL" Type="varchar" MaxLength="50" />
+    <Property Name="OtherComments" Type="varchar" MaxLength="100" />
+    <Property Name="ViolationCode" Type="varchar" MaxLength="50" />
+    <Property Name="FLDLEditOverride" Type="varchar" MaxLength="50" />
+    <Property Name="StateStatuteIndicator" Type="varchar" MaxLength="50" />
+    <Property Name="Section" Type="varchar" MaxLength="50" />
+    <Property Name="SubSection" Type="varchar" MaxLength="50" />
+    <Property Name="Crash" Type="varchar" MaxLength="50" />
+    <Property Name="PropertyDamage" Type="varchar" MaxLength="50" />
+    <Property Name="PropertyDamageAmount" Type="varchar" MaxLength="50" />
+    <Property Name="Injury" Type="varchar" MaxLength="50" />
+    <Property Name="SeriousInjury" Type="varchar" MaxLength="50" />
+    <Property Name="FatalInjury" Type="varchar" MaxLength="50" />
+    <Property Name="MethodOfArrest" Type="varchar" MaxLength="50" />
+    <Property Name="CriminalCourtReq" Type="varchar" MaxLength="50" />
+    <Property Name="InfractionCourtReq" Type="varchar" MaxLength="50" />
+    <Property Name="InfractionNoCourtReq" Type="varchar" MaxLength="50" />
+    <Property Name="CourtDate" Type="varchar" MaxLength="50" />
+    <Property Name="CourtTime" Type="varchar" MaxLength="50" />
+    <Property Name="CourtName" Type="varchar" MaxLength="50" />
+    <Property Name="CourtTimeAMPM" Type="varchar" MaxLength="50" />
+    <Property Name="CourtAddress" Type="varchar" MaxLength="100" />
+    <Property Name="CourtCity" Type="varchar" MaxLength="50" />
+    <Property Name="CourtState" Type="varchar" MaxLength="50" />
+    <Property Name="CourtZip" Type="varchar" MaxLength="50" />
+    <Property Name="ArrestDeliveredTo" Type="varchar" MaxLength="50" />
+    <Property Name="ArrestDeliveredDate" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerRank" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerMiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerLastName" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerBadgeNumber" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerId" Type="varchar" MaxLength="50" />
+    <Property Name="TrooperUnit" Type="varchar" MaxLength="50" />
+    <Property Name="Bal08Above" Type="varchar" MaxLength="50" />
+    <Property Name="DUIRefuse" Type="varchar" MaxLength="50" />
+    <Property Name="DUILicenseSurrendered" Type="varchar" MaxLength="50" />
+    <Property Name="DUILicenseRSN" Type="varchar" MaxLength="50" />
+    <Property Name="DuiEligible" Type="varchar" MaxLength="50" />
+    <Property Name="DUIEligibleRSN" Type="varchar" MaxLength="50" />
+    <Property Name="DUIBarOffice" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="AggressiveDriverFlag" Type="varchar" MaxLength="50" />
+    <Property Name="CriminalIndicator" Type="varchar" MaxLength="50" />
+    <Property Name="FileAmount" Type="varchar" MaxLength="50" />
+    <Property Name="Filler" Type="varchar" MaxLength="50" />
+    <Property Name="IssueArrestDate" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerDeliveryVerification" Type="varchar" MaxLength="50" />
+    <Property Name="DueDate" Type="varchar" MaxLength="50" />
+    <Property Name="Motorcycle" Type="varchar" MaxLength="50" />
+    <Property Name="PassengerVehicle16" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerReExamFlag" Type="varchar" MaxLength="50" />
+    <Property Name="DUIViolationUnder18" Type="varchar" MaxLength="50" />
+    <Property Name="ECitationIndicator" Type="varchar" MaxLength="50" />
+    <Property Name="NameChange" Type="varchar" MaxLength="50" />
+    <Property Name="CommercialDL" Type="varchar" MaxLength="50" />
+    <Property Name="GPSLat" Type="varchar" MaxLength="50" />
+    <Property Name="GPSLong" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationSignalRedLight" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationWorkersPresent" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationHandHeld" Type="varchar" MaxLength="50" />
+    <Property Name="ViolationSchoolZone" Type="varchar" MaxLength="50" />
+    <Property Name="AgencyIdentifier" Type="varchar" MaxLength="50" />
+    <Property Name="PermanentRegistration" Type="varchar" MaxLength="50" />
+    <Property Name="SpeedMeasuringDeviceId" Type="varchar" MaxLength="50" />
+    <Property Name="ComplianceDate" Type="varchar" MaxLength="50" />
+    <Property Name="DLSeize" Type="varchar" MaxLength="50" />
+    <Property Name="Business" Type="varchar(max)" />
+    <Property Name="FileLogId" Type="varchar" MaxLength="50" />
+    <Property Name="ExceptionReason" Type="varchar(max)" />
+    <Property Name="ExceptionFlag" Type="int" />
+    <Property Name="CaseId" Type="int" />
+    <Property Name="CaseType" Type="varchar" MaxLength="50" />
+    <Property Name="RunDate" Type="date" />
+    <Property Name="CaseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Statute" Type="varchar" MaxLength="100" />
+    <Property Name="Code" Type="varchar" MaxLength="100" />
+    <Property Name="Jurisdiction" Type="varchar" MaxLength="100" />
+    <Property Name="JurisdictionNumberOdy" Type="varchar" MaxLength="20" />
+    <Property Name="DocumentID" Type="int" />
+    <Property Name="DocumentVersionId" Type="int" />
+    <Property Name="IssueAgencyNameOdy" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerPartyID" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleMakeCode" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleColorCode" Type="varchar" MaxLength="50" />
+    <Property Name="Degree" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerFullName" Type="varchar" MaxLength="50" />
+    <Property Name="CommercialVehicleCodeOdy" Type="varchar" MaxLength="50" />
+    <Property Name="HazardousMaterialsOdy" Type="varchar" MaxLength="50" />
+    <Property Name="AggressiveDriverFlagOdy" Type="varchar" MaxLength="50" />
+    <Property Name="InjuryOdy" Type="varchar" MaxLength="50" />
+    <Property Name="SeriousInjuryOdy" Type="varchar" MaxLength="50" />
+    <Property Name="FatalInjuryOdy" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCodeOdy" Type="varchar" MaxLength="50" />
+    <Property Name="JurisdictionCode" Type="varchar" MaxLength="50" />
+    <Property Name="HeightFeet" Type="varchar" MaxLength="50" />
+    <Property Name="HeightInches" Type="varchar" MaxLength="50" />
+    <Property Name="StatuteCodeID" Type="varchar" MaxLength="50" />
+    <Property Name="CriminalCourtReqOdy" Type="varchar" MaxLength="50" />
+    <Property Name="OfficerIDOdy" Type="varchar" MaxLength="50" />
+    <Property Name="NodeID" Type="varchar" MaxLength="10" />
+    <Property Name="CourtMandatory" Type="varchar" MaxLength="10" />
+    <Property Name="TrooperUnitOdy" Type="varchar" MaxLength="10" />
+    <Property Name="EventID" Type="varchar" MaxLength="20" />
+    <Property Name="CriminalCase" Type="char" MaxLength="1" />
+    <Property Name="VendorAgencyId" Type="int" />
+    <Property Name="WorkFlowItemId" Type="int" />
+    <Property Name="RaceOdy" Type="varchar" MaxLength="5" />
+    <Property Name="LastApiAttempt" Type="datetime" />
+    <Property Name="Processed" Type="bit" />
+    <Property Name="ViolationExpiredDLOdy" Type="varchar" MaxLength="20" />
+    <Property Name="NotifySA" Type="bit" />
+    <Property Name="QueueStatus" Type="int" />
+    <Property Name="ApiStatus" Type="bit" />
+    <Property Name="Has_Image" Type="bit" />
+  </EntityType>
+  <EntityType Name="TrafficCitation_ImportFileLog">
+    <Key>
+      <PropertyRef Name="FileLogId" />
+    </Key>
+    <Property Name="FileLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileDate" Type="date" Nullable="false" />
+    <Property Name="FileName" Type="varchar" MaxLength="255" />
+    <Property Name="RecordCount" Type="int" />
+    <Property Name="ProcessStartTime" Type="datetime" />
+    <Property Name="ProcessEndTime" Type="datetime" />
+    <Property Name="ProcessStatus" Type="varchar" MaxLength="500" />
+    <Property Name="VendorAgencyId" Type="int" />
+  </EntityType>
+  <Function Name="TrafficCitationImport_ImportCitationsToOdyssey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FileLogId" Type="int" Mode="In" />
+    <Parameter Name="VendorAgencyId" Type="int" Mode="In" />
+    <Parameter Name="LocalPath" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="TrafficCitationImport_MarkFileCompletion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FileLogId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="TrafficCitationImport_ProcessCitations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FileLogId" Type="int" Mode="In" />
+    <Parameter Name="CitationNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="TrafficCitationImport_ProcessFailedCitations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CitationNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="TrafficCitationImport_QueueCitationsFixedManually" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FileLogId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="TrafficCitationImport_SendFailedToQueue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="QueFileLogId" Type="int" Mode="In" />
+    <Parameter Name="CurrExceptionFlag" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="TrafficCitationImport_UpdateJurisdiction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ReferenceModelStoreContainer">
+    <EntitySet Name="TrafficCitation_AgencyVendorInfo" EntityType="Self.TrafficCitation_AgencyVendorInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrafficCitation_Import" EntityType="Self.TrafficCitation_Import" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrafficCitation_ImportFileLog" EntityType="Self.TrafficCitation_ImportFileLog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

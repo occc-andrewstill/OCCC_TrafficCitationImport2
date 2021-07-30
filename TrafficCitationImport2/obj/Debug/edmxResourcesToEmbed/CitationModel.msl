@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReferenceModelStoreContainer" CdmEntityContainer="ReferenceEntities">
+    <EntitySetMapping Name="TrafficCitation_AgencyVendorInfo">
+      <EntityTypeMapping TypeName="ReferenceModel.TrafficCitation_AgencyVendorInfo">
+        <MappingFragment StoreEntitySet="TrafficCitation_AgencyVendorInfo">
+          <ScalarProperty Name="SLA" ColumnName="SLA" />
+          <ScalarProperty Name="AgencyCode" ColumnName="AgencyCode" />
+          <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+          <ScalarProperty Name="BCPFormatFile" ColumnName="BCPFormatFile" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SSHKey" ColumnName="SSHKey" />
+          <ScalarProperty Name="RemotePath" ColumnName="RemotePath" />
+          <ScalarProperty Name="LocalPath" ColumnName="LocalPath" />
+          <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+          <ScalarProperty Name="ServerPassword" ColumnName="ServerPassword" />
+          <ScalarProperty Name="ServerUserName" ColumnName="ServerUserName" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+          <ScalarProperty Name="AgencyName" ColumnName="AgencyName" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="CitationType" ColumnName="CitationType" />
+          <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrafficCitation_ImportFileLog">
+      <EntityTypeMapping TypeName="ReferenceModel.TrafficCitation_ImportFileLog">
+        <MappingFragment StoreEntitySet="TrafficCitation_ImportFileLog">
+          <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+          <ScalarProperty Name="ProcessStatus" ColumnName="ProcessStatus" />
+          <ScalarProperty Name="ProcessEndTime" ColumnName="ProcessEndTime" />
+          <ScalarProperty Name="ProcessStartTime" ColumnName="ProcessStartTime" />
+          <ScalarProperty Name="RecordCount" ColumnName="RecordCount" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileLogId" ColumnName="FileLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrafficCitation_Import">
+      <EntityTypeMapping TypeName="ReferenceModel.TrafficCitation_Import">
+        <MappingFragment StoreEntitySet="TrafficCitation_Import">
+          <ScalarProperty Name="Has_Image" ColumnName="Has_Image" />
+          <ScalarProperty Name="ApiStatus" ColumnName="ApiStatus" />
+          <ScalarProperty Name="QueueStatus" ColumnName="QueueStatus" />
+          <ScalarProperty Name="NotifySA" ColumnName="NotifySA" />
+          <ScalarProperty Name="ViolationExpiredDLOdy" ColumnName="ViolationExpiredDLOdy" />
+          <ScalarProperty Name="Processed" ColumnName="Processed" />
+          <ScalarProperty Name="LastApiAttempt" ColumnName="LastApiAttempt" />
+          <ScalarProperty Name="RaceOdy" ColumnName="RaceOdy" />
+          <ScalarProperty Name="WorkFlowItemId" ColumnName="WorkFlowItemId" />
+          <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+          <ScalarProperty Name="CriminalCase" ColumnName="CriminalCase" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="TrooperUnitOdy" ColumnName="TrooperUnitOdy" />
+          <ScalarProperty Name="CourtMandatory" ColumnName="CourtMandatory" />
+          <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+          <ScalarProperty Name="OfficerIDOdy" ColumnName="OfficerIDOdy" />
+          <ScalarProperty Name="CriminalCourtReqOdy" ColumnName="CriminalCourtReqOdy" />
+          <ScalarProperty Name="StatuteCodeID" ColumnName="StatuteCodeID" />
+          <ScalarProperty Name="HeightInches" ColumnName="HeightInches" />
+          <ScalarProperty Name="HeightFeet" ColumnName="HeightFeet" />
+          <ScalarProperty Name="JurisdictionCode" ColumnName="JurisdictionCode" />
+          <ScalarProperty Name="ZipCodeOdy" ColumnName="ZipCodeOdy" />
+          <ScalarProperty Name="FatalInjuryOdy" ColumnName="FatalInjuryOdy" />
+          <ScalarProperty Name="SeriousInjuryOdy" ColumnName="SeriousInjuryOdy" />
+          <ScalarProperty Name="InjuryOdy" ColumnName="InjuryOdy" />
+          <ScalarProperty Name="AggressiveDriverFlagOdy" ColumnName="AggressiveDriverFlagOdy" />
+          <ScalarProperty Name="HazardousMaterialsOdy" ColumnName="HazardousMaterialsOdy" />
+          <ScalarProperty Name="CommercialVehicleCodeOdy" ColumnName="CommercialVehicleCodeOdy" />
+          <ScalarProperty Name="OfficerFullName" ColumnName="OfficerFullName" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="VehicleColorCode" ColumnName="VehicleColorCode" />
+          <ScalarProperty Name="VehicleMakeCode" ColumnName="VehicleMakeCode" />
+          <ScalarProperty Name="OfficerPartyID" ColumnName="OfficerPartyID" />
+          <ScalarProperty Name="IssueAgencyNameOdy" ColumnName="IssueAgencyNameOdy" />
+          <ScalarProperty Name="DocumentVersionId" ColumnName="DocumentVersionId" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="JurisdictionNumberOdy" ColumnName="JurisdictionNumberOdy" />
+          <ScalarProperty Name="Jurisdiction" ColumnName="Jurisdiction" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Statute" ColumnName="Statute" />
+          <ScalarProperty Name="CaseNumber" ColumnName="CaseNumber" />
+          <ScalarProperty Name="RunDate" ColumnName="RunDate" />
+          <ScalarProperty Name="CaseType" ColumnName="CaseType" />
+          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+          <ScalarProperty Name="ExceptionFlag" ColumnName="ExceptionFlag" />
+          <ScalarProperty Name="ExceptionReason" ColumnName="ExceptionReason" />
+          <ScalarProperty Name="FileLogId" ColumnName="FileLogId" />
+          <ScalarProperty Name="Business" ColumnName="Business" />
+          <ScalarProperty Name="DLSeize" ColumnName="DLSeize" />
+          <ScalarProperty Name="ComplianceDate" ColumnName="ComplianceDate" />
+          <ScalarProperty Name="SpeedMeasuringDeviceId" ColumnName="SpeedMeasuringDeviceId" />
+          <ScalarProperty Name="PermanentRegistration" ColumnName="PermanentRegistration" />
+          <ScalarProperty Name="AgencyIdentifier" ColumnName="AgencyIdentifier" />
+          <ScalarProperty Name="ViolationSchoolZone" ColumnName="ViolationSchoolZone" />
+          <ScalarProperty Name="ViolationHandHeld" ColumnName="ViolationHandHeld" />
+          <ScalarProperty Name="ViolationWorkersPresent" ColumnName="ViolationWorkersPresent" />
+          <ScalarProperty Name="ViolationSignalRedLight" ColumnName="ViolationSignalRedLight" />
+          <ScalarProperty Name="GPSLong" ColumnName="GPSLong" />
+          <ScalarProperty Name="GPSLat" ColumnName="GPSLat" />
+          <ScalarProperty Name="CommercialDL" ColumnName="CommercialDL" />
+          <ScalarProperty Name="NameChange" ColumnName="NameChange" />
+          <ScalarProperty Name="ECitationIndicator" ColumnName="ECitationIndicator" />
+          <ScalarProperty Name="DUIViolationUnder18" ColumnName="DUIViolationUnder18" />
+          <ScalarProperty Name="OfficerReExamFlag" ColumnName="OfficerReExamFlag" />
+          <ScalarProperty Name="PassengerVehicle16" ColumnName="PassengerVehicle16" />
+          <ScalarProperty Name="Motorcycle" ColumnName="Motorcycle" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="OfficerDeliveryVerification" ColumnName="OfficerDeliveryVerification" />
+          <ScalarProperty Name="IssueArrestDate" ColumnName="IssueArrestDate" />
+          <ScalarProperty Name="Filler" ColumnName="Filler" />
+          <ScalarProperty Name="FileAmount" ColumnName="FileAmount" />
+          <ScalarProperty Name="CriminalIndicator" ColumnName="CriminalIndicator" />
+          <ScalarProperty Name="AggressiveDriverFlag" ColumnName="AggressiveDriverFlag" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DUIBarOffice" ColumnName="DUIBarOffice" />
+          <ScalarProperty Name="DUIEligibleRSN" ColumnName="DUIEligibleRSN" />
+          <ScalarProperty Name="DuiEligible" ColumnName="DuiEligible" />
+          <ScalarProperty Name="DUILicenseRSN" ColumnName="DUILicenseRSN" />
+          <ScalarProperty Name="DUILicenseSurrendered" ColumnName="DUILicenseSurrendered" />
+          <ScalarProperty Name="DUIRefuse" ColumnName="DUIRefuse" />
+          <ScalarProperty Name="Bal08Above" ColumnName="Bal08Above" />
+          <ScalarProperty Name="TrooperUnit" ColumnName="TrooperUnit" />
+          <ScalarProperty Name="OfficerId" ColumnName="OfficerId" />
+          <ScalarProperty Name="OfficerBadgeNumber" ColumnName="OfficerBadgeNumber" />
+          <ScalarProperty Name="OfficerLastName" ColumnName="OfficerLastName" />
+          <ScalarProperty Name="OfficerMiddleName" ColumnName="OfficerMiddleName" />
+          <ScalarProperty Name="OfficerFirstName" ColumnName="OfficerFirstName" />
+          <ScalarProperty Name="OfficerRank" ColumnName="OfficerRank" />
+          <ScalarProperty Name="ArrestDeliveredDate" ColumnName="ArrestDeliveredDate" />
+          <ScalarProperty Name="ArrestDeliveredTo" ColumnName="ArrestDeliveredTo" />
+          <ScalarProperty Name="CourtZip" ColumnName="CourtZip" />
+          <ScalarProperty Name="CourtState" ColumnName="CourtState" />
+          <ScalarProperty Name="CourtCity" ColumnName="CourtCity" />
+          <ScalarProperty Name="CourtAddress" ColumnName="CourtAddress" />
+          <ScalarProperty Name="CourtTimeAMPM" ColumnName="CourtTimeAMPM" />
+          <ScalarProperty Name="CourtName" ColumnName="CourtName" />
+          <ScalarProperty Name="CourtTime" ColumnName="CourtTime" />
+          <ScalarProperty Name="CourtDate" ColumnName="CourtDate" />
+          <ScalarProperty Name="InfractionNoCourtReq" ColumnName="InfractionNoCourtReq" />
+          <ScalarProperty Name="InfractionCourtReq" ColumnName="InfractionCourtReq" />
+          <ScalarProperty Name="CriminalCourtReq" ColumnName="CriminalCourtReq" />
+          <ScalarProperty Name="MethodOfArrest" ColumnName="MethodOfArrest" />
+          <ScalarProperty Name="FatalInjury" ColumnName="FatalInjury" />
+          <ScalarProperty Name="SeriousInjury" ColumnName="SeriousInjury" />
+          <ScalarProperty Name="Injury" ColumnName="Injury" />
+          <ScalarProperty Name="PropertyDamageAmount" ColumnName="PropertyDamageAmount" />
+          <ScalarProperty Name="PropertyDamage" ColumnName="PropertyDamage" />
+          <ScalarProperty Name="Crash" ColumnName="Crash" />
+          <ScalarProperty Name="SubSection" ColumnName="SubSection" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="StateStatuteIndicator" ColumnName="StateStatuteIndicator" />
+          <ScalarProperty Name="FLDLEditOverride" ColumnName="FLDLEditOverride" />
+          <ScalarProperty Name="ViolationCode" ColumnName="ViolationCode" />
+          <ScalarProperty Name="OtherComments" ColumnName="OtherComments" />
+          <ScalarProperty Name="ViolationSuspendedDL" ColumnName="ViolationSuspendedDL" />
+          <ScalarProperty Name="ViolationNoDL" ColumnName="ViolationNoDL" />
+          <ScalarProperty Name="ViolationExpiredDLMore" ColumnName="ViolationExpiredDLMore" />
+          <ScalarProperty Name="ViolationExpiredDriverLicense" ColumnName="ViolationExpiredDriverLicense" />
+          <ScalarProperty Name="ViolationInsurance" ColumnName="ViolationInsurance" />
+          <ScalarProperty Name="ViolationTagMore" ColumnName="ViolationTagMore" />
+          <ScalarProperty Name="ViolationTagLess" ColumnName="ViolationTagLess" />
+          <ScalarProperty Name="ViolationEquipment" ColumnName="ViolationEquipment" />
+          <ScalarProperty Name="ViolationSeatBelt" ColumnName="ViolationSeatBelt" />
+          <ScalarProperty Name="BloodAlcoholLevel" ColumnName="BloodAlcoholLevel" />
+          <ScalarProperty Name="ViolationDUI" ColumnName="ViolationDUI" />
+          <ScalarProperty Name="ViolationChildRestraint" ColumnName="ViolationChildRestraint" />
+          <ScalarProperty Name="ViolationPassing" ColumnName="ViolationPassing" />
+          <ScalarProperty Name="ViolationLane" ColumnName="ViolationLane" />
+          <ScalarProperty Name="ViolationRow" ColumnName="ViolationRow" />
+          <ScalarProperty Name="ViolationDevice" ColumnName="ViolationDevice" />
+          <ScalarProperty Name="ViolationCareless" ColumnName="ViolationCareless" />
+          <ScalarProperty Name="HwyInterstate" ColumnName="HwyInterstate" />
+          <ScalarProperty Name="Hwy4Lane" ColumnName="Hwy4Lane" />
+          <ScalarProperty Name="PostedSpeed" ColumnName="PostedSpeed" />
+          <ScalarProperty Name="ActualSpeed" ColumnName="ActualSpeed" />
+          <ScalarProperty Name="OfNode" ColumnName="OfNode" />
+          <ScalarProperty Name="DirectionW" ColumnName="DirectionW" />
+          <ScalarProperty Name="DirectionE" ColumnName="DirectionE" />
+          <ScalarProperty Name="DirectionS" ColumnName="DirectionS" />
+          <ScalarProperty Name="DirectionN" ColumnName="DirectionN" />
+          <ScalarProperty Name="DistanceMiles" ColumnName="DistanceMiles" />
+          <ScalarProperty Name="DistanceFeet" ColumnName="DistanceFeet" />
+          <ScalarProperty Name="ViolationLocation" ColumnName="ViolationLocation" />
+          <ScalarProperty Name="CompanionCitation" ColumnName="CompanionCitation" />
+          <ScalarProperty Name="VehicleTagExpYear" ColumnName="VehicleTagExpYear" />
+          <ScalarProperty Name="VehicleState" ColumnName="VehicleState" />
+          <ScalarProperty Name="VehicleTrailerNumber" ColumnName="VehicleTrailerNumber" />
+          <ScalarProperty Name="VehicleTagNumber" ColumnName="VehicleTagNumber" />
+          <ScalarProperty Name="HazardousMaterials" ColumnName="HazardousMaterials" />
+          <ScalarProperty Name="VehiclyColor" ColumnName="VehiclyColor" />
+          <ScalarProperty Name="VehicleStyle" ColumnName="VehicleStyle" />
+          <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+          <ScalarProperty Name="VehicleYear" ColumnName="VehicleYear" />
+          <ScalarProperty Name="CommercialVehicleCode" ColumnName="CommercialVehicleCode" />
+          <ScalarProperty Name="ViolationExpiredDL" ColumnName="ViolationExpiredDL" />
+          <ScalarProperty Name="DriverLicenseClass" ColumnName="DriverLicenseClass" />
+          <ScalarProperty Name="DriverLicenseState" ColumnName="DriverLicenseState" />
+          <ScalarProperty Name="DriverLicenseNumber" ColumnName="DriverLicenseNumber" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="StateofDriversAddress" ColumnName="StateofDriversAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="AddressDiffLicense" ColumnName="AddressDiffLicense" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="DriverSuffix" ColumnName="DriverSuffix" />
+          <ScalarProperty Name="DriverLastName" ColumnName="DriverLastName" />
+          <ScalarProperty Name="DriverMiddleName" ColumnName="DriverMiddleName" />
+          <ScalarProperty Name="DriverFirstName" ColumnName="DriverFirstName" />
+          <ScalarProperty Name="OffenseTimeAMPM" ColumnName="OffenseTimeAMPM" />
+          <ScalarProperty Name="OffenseTime" ColumnName="OffenseTime" />
+          <ScalarProperty Name="OffenseDate" ColumnName="OffenseDate" />
+          <ScalarProperty Name="DayofWeek" ColumnName="DayofWeek" />
+          <ScalarProperty Name="IssueAgencyName" ColumnName="IssueAgencyName" />
+          <ScalarProperty Name="IssueAgencyCode" ColumnName="IssueAgencyCode" />
+          <ScalarProperty Name="IssueAgencyType" ColumnName="IssueAgencyType" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="JurisdictionNumber" ColumnName="JurisdictionNumber" />
+          <ScalarProperty Name="CountyNumber" ColumnName="CountyNumber" />
+          <ScalarProperty Name="CheckDigit" ColumnName="CheckDigit" />
+          <ScalarProperty Name="CitationNumber" ColumnName="CitationNumber" />
+          <ScalarProperty Name="UpdateType" ColumnName="UpdateType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
